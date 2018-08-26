@@ -15,3 +15,5 @@ Project based on the [Flask Mega Tutorial](https://blog.miguelgrinberg.com/post/
 2. Templates
    - Use templates for modularity
    - Using [Jinja2](http://jinja.pocoo.org/docs/2.10/templates/) (included with Flask) as templating engine
+
+3. Webforms
