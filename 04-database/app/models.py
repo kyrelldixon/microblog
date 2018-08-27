@@ -1,4 +1,5 @@
 from app import db
+from datetime import datetime
 
 class User(db.Model):
   id = db.Column(db.Integer, primary_key=True)
@@ -8,7 +9,7 @@ class User(db.Model):
   posts = db.relationship('Post', backref='author', lazy='dynamic')
 
   def __repr__(self):
-    return f'<User {self.username}>'t
+    return f'<User {self.username}>'
 
 class Post(db.Model):
   id = db.Column(db.Integer, primary_key=True)
