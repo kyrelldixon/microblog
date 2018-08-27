@@ -17,3 +17,15 @@ Project based on the [Flask Mega Tutorial](https://blog.miguelgrinberg.com/post/
    - Using [Jinja2](http://jinja.pocoo.org/docs/2.10/templates/) (included with Flask) as templating engine
 
 3. Webforms
+4. Database
+   - Requirements:
+      - `flask-sqlalchemy` for class based sql tables
+      - `flask-migrate` for easy migration to other sql types (PostgreSQL, MySQL, SQLite)
+   - Flask Migrate steps
+      1. `flask db init`
+          - This creates the initial migrations folder
+      2. `flask db migrate -m "users table"`
+          - Creates migration script
+      3. `flask db upgrade`
+          - Runs migration script which makes changes to database
+          - Can also use `downgrade` to go back to earlier states
