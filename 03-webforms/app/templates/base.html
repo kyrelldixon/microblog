@@ -13,13 +13,7 @@
 </head>
 
 <body>
-  <div>
-    <ul>
-      Microblog: 
-      <li><a href="/index">Home</a></li>
-      <li><a href="/login">Login</a></li>
-    </ul>
-  </div>
+  {% include 'nav.html' %}
   <hr>
   {% with messages = get_flashed_messages() %}
     {% if messages %}
