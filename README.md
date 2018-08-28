@@ -31,3 +31,7 @@ Project based on the [Flask Mega Tutorial](https://blog.miguelgrinberg.com/post/
           - Can also use `downgrade` to go back to earlier states
    - You can use Flask-Alchemy to [query](http://flask-sqlalchemy.pocoo.org/2.3/queries/) records in the database
    - Shell Context
+5. User Logins
+   - Security with Werkzeug
+   - Requirements:
+      - `flask-login` for "remember me" and login state
