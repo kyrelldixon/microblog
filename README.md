@@ -21,7 +21,7 @@ Project based on the [Flask Mega Tutorial](https://blog.miguelgrinberg.com/post/
    - Requirements:
       - `flask-sqlalchemy` for class based sql tables
       - `flask-migrate` for easy migration to other sql types (PostgreSQL, MySQL, SQLite)
-   - Flask Migrate steps
+   - [Flask Migrate](https://flask-migrate.readthedocs.io/en/latest/) steps
       1. `flask db init`
           - This creates the initial migrations folder
       2. `flask db migrate -m "users table"`
@@ -29,3 +29,5 @@ Project based on the [Flask Mega Tutorial](https://blog.miguelgrinberg.com/post/
       3. `flask db upgrade`
           - Runs migration script which makes changes to database
           - Can also use `downgrade` to go back to earlier states
+   - You can use Flask-Alchemy to [query](http://flask-sqlalchemy.pocoo.org/2.3/queries/) records in the database
+   - Shell Context
