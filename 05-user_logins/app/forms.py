@@ -16,7 +16,7 @@ class RegistrationForm(FlaskForm):
   password2 = PasswordField('Repeat Password',validators=[DataRequired(), EqualTo('password')])
   submit = SubmitField('Register')
 
-  def validate_username():
+  def validate_username(self, username):
     """
     Ensures username is not present in the database.
     Function automatically called by WTForms
@@ -25,7 +25,7 @@ class RegistrationForm(FlaskForm):
     if user is not None:
       raise ValidationError('Please use a different username.')
 
-  def validate_email():
+  def validate_email(self, email):
     """
     Ensures email is not present in the database.
     Function automatically called by WTForms
