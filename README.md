@@ -35,3 +35,5 @@ Project based on the [Flask Mega Tutorial](https://blog.miguelgrinberg.com/post/
    - Security with Werkzeug
    - Requirements:
       - `flask-login` for "remember me" and login state
+6. Profile Page and Avatars (Skipped)
+7. Error Handling
