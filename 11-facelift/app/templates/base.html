@@ -1,30 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'bootstrap/base.html' %}
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  {% if title %}
-  <title>{{ title }} - Microblog</title>
-  {% else %}
-  <title>Welcome to Microblog</title>
-  {% endif %}
-</head>
+{% block title %}
+{% if title %}{{ title }} - Microblog{% else %}Welcome to Microblog{% endif %}
+{% endblock %}
 
-<body>
-  {% include 'nav.html' %}
-  <hr>
+{% include 'nav.html' %}
+
+{% block content %}
+<div class="container">
   {% with messages = get_flashed_messages() %}
-    {% if messages %}
-    <ul>
-      {% for message in messages %}
-      <li>{{ message }}</li>
-      {% endfor %}
-    </ul>
-    {% endif %}
+  {% if messages %}
+  {% for message in messages %}
+  <div class="alert alert-info" role="alert">{{ message }}</div>
+  {% endfor %}
+  {% endif %}
   {% endwith %}
-  {% block content %}{% endblock %}
-</body>
 
-</html>
+  {# application content needs to be provided in the app_content block #}
+  {% block app_content %}{% endblock %}
+</div>
+{% endblock %}
