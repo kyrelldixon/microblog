@@ -1,5 +1,5 @@
 from app import app, db
-from app.forms import LoginForm, RegistrationForm
+from app.auth.forms import LoginForm, RegistrationForm
 from app.models import User
 from app.auth import bp
 from flask import render_template, flash, redirect, url_for, request
@@ -9,7 +9,7 @@ from werkzeug.urls import url_parse
 @bp.route('/register', methods=['GET', 'POST'])
 def register():
   if current_user.is_authenticated:
-    return redirect(url_for('index'))
+    return redirect(url_for('main.index'))
   form = RegistrationForm()
   if form.validate_on_submit():
     user = User(username=form.username.data, email=form.email.data)
@@ -24,7 +24,7 @@ def register():
 @bp.route('/login', methods=['GET', 'POST'])
 def login():
   if current_user.is_authenticated:
-    return redirect(url_for('index'))
+    return redirect(url_for('main.index'))
   form = LoginForm()
   if form.validate_on_submit():
     # filter_by result will be None or one so first gets user if present in db
@@ -37,7 +37,7 @@ def login():
     next_page = request.args.get('next')
     # .netloc used to determine if path is relative or absolute
     if not next_page or url_parse(next_page).netloc != '':
-      next_page = url_for('index')
+      next_page = url_for('main.index')
     return redirect(next_page)
   return render_template('login.html', title='Sign In', form=form)
 
@@ -45,4 +45,4 @@ def login():
 @bp.route('/logout')
 def logout():
   logout_user()
-  return redirect(url_for('index'))
+  return redirect(url_for('main.index'))
