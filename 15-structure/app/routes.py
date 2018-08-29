@@ -1,5 +1,6 @@
 from app import app
 from flask import render_template
+# !IMPORTANT login_required decorator requires current_user import
 from flask_login import current_user, login_required
 
 @app.route('/')
