@@ -16,10 +16,13 @@ migrate = Migrate(app, db)
 # Custom Middleware
 login = LoginManager(app)
 bootstrap = Bootstrap(app)
-login.login_view = 'login'
+login.login_view = 'auth.login'
 
 # Blueprints
 from app.errors import bp as errors_bp
 app.register_blueprint(errors_bp)
+
+from app.auth import bp as auth_bp
+app.register_blueprint(auth_bp)
 
 from app import routes, models
