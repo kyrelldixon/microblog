@@ -1,4 +1,3 @@
-from app import app
 from app.main import bp
 from flask import render_template, g, current_app
 # !IMPORTANT login_required decorator requires current_user import

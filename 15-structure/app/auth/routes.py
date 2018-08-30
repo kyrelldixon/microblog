@@ -1,4 +1,4 @@
-from app import app, db
+from app import db
 from app.auth.forms import LoginForm, RegistrationForm
 from app.models import User
 from app.auth import bp
